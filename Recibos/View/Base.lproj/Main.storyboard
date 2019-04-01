@@ -33,12 +33,51 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Trips" id="9I1-rF-pSD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VA3-ez-yIG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VA3-ez-yIG">
+                            <connections>
+                                <action selector="newTripButtonPressed:" destination="Sok-t4-Cj8" id="sDi-Ts-wji"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="1cJ-3C-6aM" kind="show" identifier="goToReceipts" id="fiB-el-caL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m40-rf-yuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="449" y="134"/>
+        </scene>
+        <!--Register Table View Controller-->
+        <scene sceneID="nWw-bC-c3D">
+            <objects>
+                <tableViewController id="1cJ-3C-6aM" customClass="registerTableViewController" customModule="Recibos" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gyx-Ha-wta">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="receiptCell" id="wbo-4j-UYP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbo-4j-UYP" id="uRq-Nq-yW8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1cJ-3C-6aM" id="48G-v1-M9A"/>
+                            <outlet property="delegate" destination="1cJ-3C-6aM" id="tww-LV-lkn"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="T3W-yS-O5m"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAa-UU-8X1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lPs-9m-88w">

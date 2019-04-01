@@ -7,39 +7,101 @@
 //
 
 import UIKit
+import CoreData
 
 class tripTableViewController: UITableViewController {
+    
+    var tripsArray = [Trip]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loadTrip()
        
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 0
+        return tripsArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
 
-       
-
+        cell.textLabel?.text = tripsArray[indexPath.row].date
+        
         return cell
     }
+    
+    //MARK: Table view delegates
+    
+    
+    
+    
+    
+    //MARK: Manipulation methods
+    
+    func loadTrip() {
+        
+        do {
+            tripsArray = try context.fetch(Trip.fetchRequest())
+        } catch {
+            print("Error loading \(error)")
+        }
+        tableView.reloadData()
+        
+    }
+    
+    
+    func saveTrip() {
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving \(error)")
+        }
+        tableView.reloadData()
+        
+    }
  
+    //MARK: Add new trips
+    
 
+    @IBAction func newTripButtonPressed(_ sender: UIBarButtonItem) {
+       
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Create new trip.", message: "", preferredStyle: .alert)
 
+        let action = UIAlertAction(title: "Create Trip", style: .default) { (action) in
+            
+            let newTrip = Trip(context: self.context)
+            newTrip.date = textField.text!
+            
+            self.tripsArray.append(newTrip)
+            
+            self.saveTrip()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Enter your trip dates and place"
+            textField = alertTextField
+        }
 
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+
+    }
+    
 
 
 
