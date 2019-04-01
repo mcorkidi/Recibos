@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		530458AF2252860700AF4B2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530458AE2252860700AF4B2D /* AppDelegate.swift */; };
-		530458B12252860700AF4B2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530458B02252860700AF4B2D /* ViewController.swift */; };
 		530458B42252860700AF4B2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530458B22252860700AF4B2D /* Main.storyboard */; };
 		530458B72252860700AF4B2D /* Recibos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 530458B52252860700AF4B2D /* Recibos.xcdatamodeld */; };
 		530458B92252860800AF4B2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 530458B82252860800AF4B2D /* Assets.xcassets */; };
 		530458BC2252860800AF4B2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530458BA2252860800AF4B2D /* LaunchScreen.storyboard */; };
+		531E169C22528BB000AE7F55 /* tripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E169B22528BB000AE7F55 /* tripTableViewController.swift */; };
+		531E169E22528BDC00AE7F55 /* registerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E169D22528BDC00AE7F55 /* registerTableViewController.swift */; };
+		531E16A022528CB600AE7F55 /* receiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E169F22528CB600AE7F55 /* receiptViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		530458AB2252860700AF4B2D /* Recibos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recibos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		530458AE2252860700AF4B2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		530458B02252860700AF4B2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		530458B32252860700AF4B2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		530458B62252860700AF4B2D /* Recibos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recibos.xcdatamodel; sourceTree = "<group>"; };
 		530458B82252860800AF4B2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		530458BB2252860800AF4B2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		530458BD2252860800AF4B2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		531E169B22528BB000AE7F55 /* tripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripTableViewController.swift; sourceTree = "<group>"; };
+		531E169D22528BDC00AE7F55 /* registerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerTableViewController.swift; sourceTree = "<group>"; };
+		531E169F22528CB600AE7F55 /* receiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receiptViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +90,9 @@
 		530458C52252863B00AF4B2D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				530458B02252860700AF4B2D /* ViewController.swift */,
+				531E169B22528BB000AE7F55 /* tripTableViewController.swift */,
+				531E169D22528BDC00AE7F55 /* registerTableViewController.swift */,
+				531E169F22528CB600AE7F55 /* receiptViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				530458B12252860700AF4B2D /* ViewController.swift in Sources */,
 				530458AF2252860700AF4B2D /* AppDelegate.swift in Sources */,
+				531E169E22528BDC00AE7F55 /* registerTableViewController.swift in Sources */,
+				531E169C22528BB000AE7F55 /* tripTableViewController.swift in Sources */,
+				531E16A022528CB600AE7F55 /* receiptViewController.swift in Sources */,
 				530458B72252860700AF4B2D /* Recibos.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
