@@ -18,7 +18,7 @@ class tripTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("before error")
         loadTrip()
        
     }
@@ -35,12 +35,16 @@ class tripTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tripCell", for: indexPath)
 
-        cell.textLabel?.text = tripsArray[indexPath.row].date
+        cell.textLabel?.text = tripsArray[indexPath.row].tripDate
         
         return cell
     }
     
     //MARK: Table view delegates
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToRegister", sender: self)
+    }
+    
     
     
     
@@ -55,7 +59,7 @@ class tripTableViewController: UITableViewController {
         } catch {
             print("Error loading \(error)")
         }
-        tableView.reloadData()
+        self.tableView.reloadData()
         
     }
     
@@ -83,7 +87,7 @@ class tripTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Create Trip", style: .default) { (action) in
             
             let newTrip = Trip(context: self.context)
-            newTrip.date = textField.text!
+            newTrip.tripDate = textField.text!
             
             self.tripsArray.append(newTrip)
             

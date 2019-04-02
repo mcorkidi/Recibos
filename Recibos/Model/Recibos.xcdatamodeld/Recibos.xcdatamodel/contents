@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G6029" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Receipt" representedClassName="Receipt" syncable="YES" codeGenerationType="class">
-        <attribute name="amount" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="number" attributeType="String" syncable="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="receipts" inverseEntity="Trip" syncable="YES"/>
+    <entity name="Receipt" representedClassName=".Receipt" syncable="YES" codeGenerationType="class">
+        <attribute name="receiptAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiptDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiptName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="receiptNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="receipts" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
-        <attribute name="date" attributeType="String" syncable="YES"/>
-        <relationship name="receipts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receipt" inverseName="newRelationship" inverseEntity="Receipt" syncable="YES"/>
+        <attribute name="tripDate" attributeType="String" syncable="YES"/>
+        <relationship name="receipts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receipt" inverseName="parent" inverseEntity="Receipt" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Receipt" positionX="145.12109375" positionY="5.92578125" width="128" height="105"/>
+        <element name="Receipt" positionX="160.13671875" positionY="-0.7734375" width="128" height="120"/>
         <element name="Trip" positionX="-45" positionY="0" width="128" height="75"/>
     </elements>
 </model>

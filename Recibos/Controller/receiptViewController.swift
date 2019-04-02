@@ -7,24 +7,33 @@
 //
 
 import UIKit
+import CoreData
 
 class receiptViewController: UIViewController {
+    @IBOutlet weak var dateInput: UITextField!
+    @IBOutlet weak var receiptInput: UITextField!
+    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var amountInput: UITextField!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+
+    
+    func saveReceipt() {
+        
+        
     }
     
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func addAndNewPressed(_ sender: UIButton) {
     }
-    */
+
+    @IBAction func addAndBackPressed(_ sender: UIButton) {
+    }
 
 }
